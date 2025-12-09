@@ -15,7 +15,7 @@ const [user, setUser] = useState({
   const handleSubmit=async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/user', user);
+      const response = await axios.post('https://formproject-dcn1.onrender.com/api/user', user);
       console.log('Data submitted successfully:', response.data);
     } catch (error) {
       console.error('Error submitting data:', error);
@@ -26,7 +26,7 @@ const [user, setUser] = useState({
 
   const getUsers=async()=>{
     try {
-      const response = await axios.get('http://localhost:5000/api/user');
+      const response = await axios.get('https://formproject-dcn1.onrender.com/api/user');
       setallUsers(response.data);
     } catch (error) {
       console.error('Error fetching users:', error);
