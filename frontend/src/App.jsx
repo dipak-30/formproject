@@ -22,6 +22,8 @@ const notify = () => toast("Wow so easy!");
     try {
       const response = await axios.post('https://formproject-dcn1.onrender.com/api/user', user);
       console.log('Data submitted successfully:', response.data);
+            alert("data fetched successfully");
+      getUsers();
     } catch (error) {
       console.error('Error submitting data:', error);
     }
@@ -33,7 +35,6 @@ const notify = () => toast("Wow so easy!");
     try {
       const response = await axios.get('https://formproject-dcn1.onrender.com/api/user');
       setallUsers(response.data);
-      // alert("data fetched successfully");
     } catch (error) {
       console.error('Error fetching users:', error);
     }
@@ -92,8 +93,8 @@ const notify = () => toast("Wow so easy!");
     />
         <br/>
 
-        <button type='submit' onClick={notify}>Submit</button> 
-                <ToastContainer />
+        <button type='submit' >Submit</button> 
+                
 
 
       </form>
