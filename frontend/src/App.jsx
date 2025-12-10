@@ -29,6 +29,9 @@ const notify = () => toast("Wow so easy!");
     }
   } ;
 
+      setallUsers((prev) => [response.data, ...prev]);
+
+
   setUser({
       name: "",
       email: "",
@@ -37,7 +40,6 @@ const notify = () => toast("Wow so easy!");
       message: ""
     });
 
-    setallUsers((prev) => [response.data, ...prev]);
 
   const [allUsers, setallUsers] = useState([]);
 
