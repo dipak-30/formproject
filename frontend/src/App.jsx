@@ -2,6 +2,8 @@ import React  from 'react'
 import { useState , useEffect } from 'react'
 import './App.css'
 import axios, { all } from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function App() {
 const [user, setUser] = useState({
@@ -11,6 +13,9 @@ const [user, setUser] = useState({
     phone: "",
     message: ""
   });
+
+const notify = () => toast("Wow so easy!");
+
 
   const handleSubmit=async (e) => {
     e.preventDefault();
@@ -28,6 +33,7 @@ const [user, setUser] = useState({
     try {
       const response = await axios.get('https://formproject-dcn1.onrender.com/api/user');
       setallUsers(response.data);
+      // alert("data fetched successfully");
     } catch (error) {
       console.error('Error fetching users:', error);
     }
@@ -86,7 +92,9 @@ const [user, setUser] = useState({
     />
         <br/>
 
-        <button type='submit'>Submit</button> 
+        <button type='submit' onClick={notify}>Submit</button> 
+                <ToastContainer />
+
 
       </form>
 
