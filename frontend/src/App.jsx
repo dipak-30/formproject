@@ -29,6 +29,16 @@ const notify = () => toast("Wow so easy!");
     }
   } ;
 
+  setUser({
+      name: "",
+      email: "",
+      age: "",
+      phone: "",
+      message: ""
+    });
+
+    setallUsers((prev) => [response.data, ...prev]);
+
   const [allUsers, setallUsers] = useState([]);
 
   const getUsers=async()=>{
