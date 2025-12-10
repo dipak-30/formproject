@@ -22,7 +22,7 @@ const notify = () => toast("Wow so easy!");
     try {
       const response = await axios.post('https://formproject-dcn1.onrender.com/api/user', user);
       console.log('Data submitted successfully:', response.data);
-            alert("data fetched successfully");
+            alert("data saved successfully");
       getUsers();
     } catch (error) {
       console.error('Error submitting data:', error);
